@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vibrate With JS</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="flex flex-col justify-center items-center gap-3 h-screen">
+            <div>
+                <button
+                id="single-vibrate"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                >
+                    Single Vibrate
+                </button>
+            </div>
+            <div>
+                <button
+                id="multiple-vibrate"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                >
+                    Multiple Vibrate
+                </button>
+            </div>
+        </div>
+
+
+        <script>
+               const singleEl = document.getElementById("single-vibrate");
+               const multipleEl = document.getElementById("multiple-vibrate");
+
+               singleEl.addEventListener("click", () => {
+                window.navigator.vibrate(1000);
+               })
+
+               multipleEl.addEventListener("click", () => {
+                window.navigator.vibrate([300, 100, 200, 50, 300]);
+               })
+
+        </script>
+    </body>
+</html>
